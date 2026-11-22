@@ -69,3 +69,31 @@ $ESTADOS_BITLOCKER = @{ 1 = 'Activado'; 2 = 'Desactivado'; 3 = 'Cifrando'; 4 = '
 # Requisitos básicos de Windows 11
 $RAM_MINIMA_WINDOWS_11_GB = 4
 $DISCO_MINIMO_WINDOWS_11_GB = 64
+
+# Piezas cambiadas: valores genéricos que deja una placa nueva sin programar
+$PATRON_SERIE_GENERICA = 'To be filled|Default string|O\.E\.M\.|System Serial|Serial Number|Not Applicable|Not Specified|^None$|^0+$|^1234567|^x+$'
+$PATRON_UUID_GENERICO = '^(0{8}-0{4}-0{4}-0{4}-0{12}|F{8}-F{4}-F{4}-F{4}-F{12})$'
+$DIAS_EQUIPO_USADO = 365
+$HORAS_DISCO_NUEVO = 200
+
+# Activadores piratas de Windows
+$PATRON_ACTIVADORES = 'KMS|AutoPico|AAct|Activator|SECOH|KMSELDI|HWIDGen|MAS_AIO'
+$RUTAS_ACTIVADORES = @(
+  '%windir%\KMSAutoS', '%ProgramData%\KMSAutoS', '%ProgramData%\KMSAuto', '%windir%\AAct_Tools'
+  '%ProgramFiles%\KMSpico', '%ProgramData%\Online_KMS_Activation', '%windir%\SECOH-QAD.exe'
+  '%windir%\SECOH-QAD.dll', '%windir%\System32\SECOH-QAD.exe', '%windir%\System32\SppExtComObjHook.dll'
+  '%windir%\System32\SppExtComObjPatcher.exe'
+)
+
+# Procesador: texto que delata un cambio del nombre en el registro
+$PATRON_CAMBIO_PROCESADOR = 'ProcessorNameString|CentralProcessor'
+$PATRON_MODELO_PROCESADOR = 'Core\s*Ultra\s*\d+\s*\w+|i[3579]-\w+|Ryzen\s*(AI\s*)?\d+\s*\w+|Celeron\s*\w+|Pentium\s*\w+|Athlon\s*\w+|Snapdragon\s*\w+(\s*\w+)?|\bN\d{2,4}\b'
+
+# Prueba de rendimiento
+$SEGUNDOS_PRUEBA_UN_HILO = 5
+$SEGUNDOS_PRUEBA_TODOS_HILOS = 15
+$MEGAS_PRUEBA_DISCO = 1024
+$GIGAS_LIBRES_PRUEBA_DISCO = 3
+$RENDIMIENTO_CPU_REVISAR = 70
+$RENDIMIENTO_CPU_MAL = 40
+$VELOCIDAD_MINIMA_DISCO = @{ NVMe = 300; SSD = 150; HDD = 50 }

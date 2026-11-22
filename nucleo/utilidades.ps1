@@ -38,6 +38,7 @@ function Probar-EsAdministrador {
 
 # Ejecuta un apartado sin que un fallo detenga el informe
 function Invocar-Seccion($titulo, [scriptblock]$bloque) {
+  Write-Host "- $titulo"
   try {
     return & $bloque
   } catch {

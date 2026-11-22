@@ -18,16 +18,19 @@ function Nueva-CarpetaInforme {
 }
 
 # Arranque
-Write-Host 'Analizando el equipo, puede tardar un minuto...'
+Write-Host 'Analizando el equipo, tarda alrededor de un minuto. Deja el cargador conectado.'
 $esAdministrador = Probar-EsAdministrador
 $carpetaInforme = Nueva-CarpetaInforme
 $secciones = @(
   (Invocar-Seccion 'Equipo' { Obtener-Equipo })
   (Invocar-Seccion 'Componentes' { Obtener-Componentes })
+  (Invocar-Seccion 'Autenticidad del procesador' { Obtener-Procesador })
+  (Invocar-Seccion 'Rendimiento' { Obtener-Rendimiento })
   (Invocar-Seccion 'Pantalla' { Obtener-Pantalla })
   (Invocar-Seccion 'Dispositivos' { Obtener-Dispositivos })
   (Invocar-Seccion 'Discos' { Obtener-Discos })
   (Invocar-Seccion 'Batería' { Obtener-Bateria $carpetaInforme })
+  (Invocar-Seccion 'Piezas cambiadas' { Obtener-Piezas })
   (Invocar-Seccion 'Antigüedad aproximada' { Obtener-Antiguedad })
   (Invocar-Seccion 'Licencia y bloqueos' { Obtener-Licencia })
   (Invocar-Seccion 'Seguridad' { Obtener-Seguridad })
